@@ -96,8 +96,8 @@ function Modal(props) {
 }
 
 class Modal2 extends React.Component {
-  constructor(){
-    super();
+  constructor(props){
+    super(props);
     this.state = {
       name: 'kim',
       age : 20
