@@ -4,13 +4,14 @@ import { Button, Navbar, Container, Nav } from 'react-bootstrap';
 import bg from './img/bg.png';
 import { useState } from 'react';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
+import axios from 'axios';
 
 import data from './data.js';
 import Detail from './routes/Detail.js';
 
 function App() {
   
-  let [shoes] = useState(data)
+  let [shoes, setshoes] = useState(data)
   let navigate = useNavigate();
 
   return (
@@ -20,7 +21,7 @@ function App() {
         <Container>
           <Navbar.Brand href="#home">ShoeShop</Navbar.Brand>
           <Nav className="me-auto">
-            <Nav.Link href="/"> 홈 </Nav.Link>
+            {/* <Nav.Link href="/"> 홈 </Nav.Link> */}
             <Nav.Link onClick={()=>{ navigate('/') }}> Home </Nav.Link>
             <Nav.Link onClick={()=>{ navigate('/detail') }}> 상세페이지 </Nav.Link>
           </Nav>
@@ -41,6 +42,20 @@ function App() {
                 })}
             </div>
           </div>
+          <button onClick={() => {
+            axios.get('https://codingapple1.github.io/shop/data2.json')
+            .then((res) => {
+              console.log(res.data)
+              // shoes state에 데이터 추가
+              let copy = [...shoes, ...res.data];
+              setshoes(copy);
+            })
+
+            // Promise.all([ axios.get('/url1'), axios.get('/url2')]) ajax를 여러개 요청
+            fetch('https://codingapple1.github.io/shop/data2.json')
+          
+           
+          }}> 더보기 </button>
           </>
         } />
         <Route path="/detail/:id" element={ <Detail shoes={shoes}/>} />
