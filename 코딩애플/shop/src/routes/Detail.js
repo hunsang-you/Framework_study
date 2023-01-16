@@ -5,7 +5,8 @@ import { useState } from 'react';
 import Nav from 'react-bootstrap/Nav';
 
 import {Context1} from './../App.js';
-
+import { addItem } from "../store.js";
+import { useDispatch } from "react-redux";
 
 let YellowBtn = styled.button`
     background : ${ props => props.bg };
@@ -32,7 +33,7 @@ function Detail(props) {
     let [count, setCount] = useState(0)
     let [alert, setalert] = useState(true)
     let [탭, 탭변경] = useState(0)
-    
+    let dispatch = useDispatch()
 
     useEffect(()=> {
         let a = setTimeout(()=> { setalert(false) }, 2000)
@@ -66,7 +67,9 @@ function Detail(props) {
                     <h4 className="pt-5"> {props.shoes[id].title} </h4>
                     <p> {props.shoes[id].content} </p>
                     <p> {props.shoes[id].price}원 </p>
-                    <button className="btn btn-danger"> 주문하기 </button>
+                    <button className="btn btn-danger" onClick={()=> {
+                        dispatch(addItem( { id : 1, name : 'Red Knit', count : 1 } ))
+                    }}> 주문하기 </button>
                 </div>
             </div>
 
