@@ -2,7 +2,7 @@ import logo from './logo.svg';
 import './App.css';
 import { Button, Navbar, Container, Nav } from 'react-bootstrap';
 import bg from './img/bg.png';
-import { createContext, useState } from 'react';
+import { createContext, useEffect, useState } from 'react';
 import { Routes, Route, Link, useNavigate, Outlet } from 'react-router-dom';
 import axios from 'axios';
 import Cart from './routes/Cart.js'
@@ -15,6 +15,16 @@ export let Context1 = createContext()
 
 function App() {
   
+  // let obj = {name : 'kim' }
+  // localStorage.setItem('data', JSON.stringify(obj))
+  
+  // let 꺼낸거 = localStorage.getItem('data')
+  // console.log(JSON.parse(꺼낸거))
+
+  useEffect(()=>{
+    localStorage.setItem('watched', JSON.stringify([]))
+  })
+
   let [shoes, setshoes] = useState(data)
   let [재고] = useState([10, 11, 12])
 
