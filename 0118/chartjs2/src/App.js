@@ -39,8 +39,15 @@ const data = {
 };
 
 const config = {
-  type: 'line',
+  type: 'doughnut',
   data: data,
+    options : {
+    plugins : { legend : false},
+    events : [],
+    rotation : -92,
+    circumference : 184,
+    cutout : 290,
+  }
 };
 
 const options = {
