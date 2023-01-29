@@ -1,0 +1,17 @@
+.App {
+  text-align: center;
+}
+
+.loginpage {
+
+}
+
+.App-logo {
+  margin-top: 100px;
+  height: 40vmin;
+  pointer-events: none;
+}
+
+.loginbtn_1 {
+  cursor: pointer;
+}
