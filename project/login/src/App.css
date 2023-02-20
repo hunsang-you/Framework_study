@@ -1,17 +1,52 @@
 .App {
   text-align: center;
+  align-items: center;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  /* height: 840px; */
+  position: relative;
+  /* width: 400px; */
+  
 }
 
 .loginpage {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  pointer-events: none;
+  width: 100%;
+}
 
+.loginpage > * {
+  flex-shrink: 0;
+  pointer-events: auto;
 }
 
 .App-logo {
-  margin-top: 100px;
-  height: 40vmin;
+  margin-top: 180px;
+  margin-left: 6vh;
+  margin-right: 6vh;
   pointer-events: none;
+}
+
+.miriLogo {
+  width: 248px;
+  height: 179px;
+}
+
+.loginbtn {
+  margin-top: 240px;
 }
 
 .loginbtn_1 {
   cursor: pointer;
+  width: 248px;
+  height: 56px;
+}
+
+.loginbtn_2 {
+  cursor: pointer;
+  width: 248px;
+  height: 56px;
 }

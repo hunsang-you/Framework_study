@@ -28,15 +28,14 @@ const NaverLogin = ({ setGetToken, setUserInfo }) => {
            // 아래와 같이 로그인한 유저 ( 사용자 ) 정보를 직접 접근하여 추출가능하다.
            // 이때, 데이터는 첫 연동시 정보 동의한 데이터만 추출 가능하다.
     
-           // 백엔드 개발자가 정보를 전달해준다면 아래 요기! 라고 작성된 부분까지는 
-           // 코드 생략이 가능하다.  
+           // 백엔드 개발자가 정보를 전달해준다면 아래 요기! 라고 작성된 부분까지는 코드 생략이 가능하다.  
       
       naverLogin.getLoginStatus(async function (status) {
 			if (status) {
-              // 아래처럼 선택하여 추출이 가능하고, 
+              // 아래처럼 선택하여 추출이 가능, 
 				const userid = naverLogin.user.getEmail()
 				// const username = naverLogin.user.getName()
-              // 정보 전체를 아래처럼 state 에 저장하여 추출하여 사용가능하다. 
+              // 정보 전체를 아래처럼 state 에 저장하여 추출하여 사용가능. 
               // setUserInfo(naverLogin.user)
 			}
 		})     
@@ -45,7 +44,7 @@ const NaverLogin = ({ setGetToken, setUserInfo }) => {
     
     
     
-            // 네이버 소셜 로그인 (네아로) 는 URL 에 엑세스 토큰이 붙어서 전달된다.
+            // 네이버 소셜 로그인는 URL 에 엑세스 토큰이 붙어서 전달된다.
             // 우선 아래와 같이 토큰을 추출 할 수 있으며,
             // 3부에 작성 될 Redirect 페이지를 통해 빠르고, 깨끗하게 처리가 가능하다.
    
