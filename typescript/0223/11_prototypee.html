@@ -1,0 +1,22 @@
+<script>
+    // 부모
+    function 기계() {
+        this.q = 'strike';
+        this.w = 'snowball';
+    }
+
+    // 자식
+    let nunu = new 기계()
+
+    //prototype을 써서 자식 object에게 데이터를 물려줌
+    기계.prototype.name = 'kim'
+    //  object에서 자료를 뽑을 때는
+    // 1. 직접 자료를 가지고 있으면 그것을 출력
+    // 2. 없으면 부모유전자까지 뒤짐
+    // 3. 부모의 부모까지.......반복
+    let array = [4, 2, 1];
+    
+    Array.prototype.함수 = function(){}
+     
+
+</script>

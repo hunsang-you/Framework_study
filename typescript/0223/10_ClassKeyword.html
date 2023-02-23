@@ -1,0 +1,33 @@
+<script>
+    // let nunu = {
+
+    //     q : 'consume',
+    //     w : 'snowball',
+    // } 
+    
+    // let garen = {
+    //     q : 'strike',
+    //     w : 'courage',
+    // }
+
+    // 예전 문법(constructor)
+    // this -> 기계로부터 생성되는 object (instance)
+    function 기계(q, w) {
+        this.q = q;
+        this.w = w;
+    }
+
+    let nunu = new 기계('consume', 'snowball');
+    let garen = new 기계('strike', 'courage');
+
+    // ES6
+    class Hero {
+        constructor(q, w) {
+            this.q = q;
+            this.w = w;
+        }
+    }
+
+    let draven = new Hero('axe', 'hex')
+
+</script>
