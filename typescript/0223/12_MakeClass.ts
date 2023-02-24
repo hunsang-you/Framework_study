@@ -52,8 +52,8 @@ console.log(car1);
 console.log(car1.tax());
 
 class Word {
-  name;
-  number;
+  name: string[];
+  number: number[];
 
   constructor(...data) {
     let names: string[] = [];
